@@ -32,6 +32,7 @@ There are a variety of options available for cancer treatment. The type of treat
       
 ## Base Paper
 
+[Classification of Cancerous Profiles Using Machine Learning.pdf](https://github.com/kandepallysatish/Patients_Cancerous_Stage_Detection_and_Treatment_Suggestion_using_Random_Forest_Technique_ML/files/10146093/Classification.of.Cancerous.Profiles.Using.Machine.Learning.pdf)
 
 
 ## Installations (# modules Installations process 
