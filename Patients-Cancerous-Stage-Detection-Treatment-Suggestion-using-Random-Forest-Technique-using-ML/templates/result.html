@@ -1,0 +1,149 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Cancerous classification using ML</title>
+		<head>
+        <meta charset="utf-8">
+        <title>Cancerous classification using ML</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+      <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+
+    </head>
+<link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+    <body style="background-image: url('../static/backgrounds.jpg'); background-repeat: no-repeat;background-attachment: fixed; background-size: cover;">
+
+        <!-- Website Title -->
+		<div class="container">
+            <h2 class='container-heading'><span class="heading_font" style="color:white; font-family: 'Dancing Script'; background-color: #00FFFF "> Cancerous Prediction</span></h2>
+         <div class='description'> <br></br>
+    			<p style="color:violet"></p>
+    	 </div>
+    	</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction == 0 %}
+				<h1><span class='danger'>Cancerous patients data classification using ML</span></h1><h3><span class='You Dont have Cancer' style="color:lawngreen; ">You have less Cancer Symptoms: Good Health</h3>
+            <img src="https://www.cancerresearchuk.org/sites/default/files/styles/cruk_wide_resp_breakpoint_two/public/924_signs_and_symptoms_v4_003_0.png?itok=7KORF1g3" alt="Danger" width="300" height="373" ">
+            {% elif prediction == 1 %}
+              <h1> <span class='safe' style="color:lawngreen; ">Everything looks NORMAL.</span></h1><h2 > <span class='You Have Some Cancer Symptoms' style="color:orange; ">You Have Some Moderate Cancer Symptoms: Please Take Precautions</h2><br>
+              <p>Recommended Drug: <b>Altretamine/ Bendamustine/ Busulfan/ Carboplatin/ Carmustine/ Chlorambucil/ Cisplatin/ Cyclophosphamide.</b></p>
+            <img src="https://www.wcrf.org/wp-content/uploads/2020/12/TER-Recommendation-2018-Int-WEB.jpg" alt="you dont have diabetes" width="420"
+             height="403" ;>
+            {% elif prediction == 2 %}
+				<h1><span class='danger'>Cancerous patients data classification using ML</span></h1><h3><span class='You Have Viral Cancer' style="color:Red; ">You Have Viral Cancer: Please Consult Doctor</h3>
+				<p>Recommended Drug: <b>Doxorubicin (Adriamycin)</b></p>
+            <img src="https://devstatic.pluspin.com/7bc34c7bc5494ac1b9dc4501eba642a3.png" alt="Danger" width="300" height="373" ">
+			{% endif %}
+                <br></br>
+		</div>
+</body>
+</html>
+<style>
+
+<style>
+html{
+	height: 100%;
+	margin: 0;
+
+}
+
+body{
+	font-family: Arial, Helvetica,sans-serif;
+    text-align: center;
+    width: 100%;
+	height:auto;
+	
+  background-image: url('https://www.wunc.org/sites/wunc/files/styles/medium/public/201909/doctor-physician-white-coat-uniform-medical-assistant-stethoscope-1571983-pxhere.com_.jpg');
+  background-repeat: no-repeat;
+   background-size: cover;
+
+}
+
+/* Website Title */
+.container{
+    padding: 25px;
+	position: relative;
+}
+
+.description p{
+	color: #ffffff;
+    font-style: italic;
+    font-size: 14px;
+    margin: -5px 0 0;
+}
+
+
+
+
+.website{
+  float:left
+}
+
+/* Contact */
+.contact-icon{
+	color: #3385ff;
+	padding: 7px;
+}
+
+.contact-icon:hover{
+	color: blue;
+}
+
+/* Footer */
+.footer{
+	flex-shrink: 0;
+	position: relative;
+	padding: 21px;
+
+}
+
+.footer-description{
+	color: #3385ff;
+	margin: 0;
+	font-size: 12px;
+}
+
+/* Result */
+.results{
+    padding: 25px 0 0;
+	flex: 1 0 auto;
+	text-shadow: 2px 2px 4px black;
+}
+
+.danger{
+    color: #ff0000;
+}
+
+.safe{
+    color: green;
+}
+.happy{
+  color:#6600cc
+}
+.sad{
+  color:#669900
+
+}
+
+h2 {
+      text-align: center;
+      color: white;
+      text-transform: uppercase;
+      font-size: 30px;
+      text-shadow: 2px 2px 4px black;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+</style>
+
+{% endblock %}

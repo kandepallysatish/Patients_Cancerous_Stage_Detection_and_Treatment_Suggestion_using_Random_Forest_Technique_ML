@@ -1,0 +1,60 @@
+   
+<Head>    
+<Title>   
+Home
+</Title>
+<style type=text/css> 
+body 
+{
+height: 125vh;
+margin-top: 80px;
+padding: 30px;
+background-size: cover;
+font-family: sans-serif;
+}
+header {
+background-color: blue;
+position: fixed;
+left: 0;
+right: 0;
+top: 5px;
+height: 40px;
+display: flex;
+align-items: center;
+box-shadow: 0 0 25px 0 black;
+}
+header * {
+display: inline;
+}
+header li {
+margin: 20px;
+}
+header li a {
+color: white;
+text-decoration: none;
+font-size: 150%;
+text-shadow: 2px 2px 4px black;
+font-family: sans-serif;
+}
+</style> 
+</Head>
+<Body> 
+<header>
+<nav>
+<div id="navbar" class="classnav pd-1">
+<ul>
+<li>
+ <a href="/"> <b> Home</b></a>
+</li>
+
+</ul>
+</div>
+</nav>
+</header>
+{% block content %}
+
+{% endblock %}
+</Body> 
+
+
+ 

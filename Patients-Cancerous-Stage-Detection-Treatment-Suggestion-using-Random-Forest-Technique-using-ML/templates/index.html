@@ -1,0 +1,517 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"> -->
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+</head>
+
+<body style="background-image: url('../static/backgrounds.jpg'); background-repeat: no-repeat;background-attachment: fixed; background-size: cover;">
+
+        <!-- Website Title -->
+    <div class="container">
+            <h2 class='container-heading'>
+            <span class="heading_font"style="color:White; background-color: #00FFFF;"><b>Cancerous Data classification using ML</b></span>
+            </h2>
+            <div class='description'><br></br>
+    			<p style="color:red;font-size:18px"></p>
+            </div>
+    </div>
+
+        <!-- Text Area -->
+    <div class="ml-container">
+        <form action="{{ url_for('predict') }}" method="POST">
+        <!-- A1 -->
+        <input style="border: 1px solid black; width: 400px;height: 40px;" class="form-control" type="text" name="Age" placeholder="Age">
+        <!-- A2 -->
+        <select id="Gender" name="Gender" style="
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=1>Gender</option>
+            <option value=1>Male</option>
+            <option value=2>Female</option>
+        </select><br>
+        <!-- A3 -->
+        <select id="Air Pollution" name="Air Pollution" style=" left:80px;
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Air Pollution</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+        </select>
+        <!-- A4 -->
+        <select id="Alcohol use" name="Alcohol use" style="
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Alcohol use</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+        </select><br>
+        <!-- A5 -->
+        <select id="Dust Allergy" name="Dust Allergy" style=" left:80px;
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Dust Allergy</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+        </select>
+        <!-- A6 -->
+        <select id="OccuPational Hazards" name="OccuPational Hazards" style="
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>OccuPational Hazards</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+        </select><br>
+        <!-- A7 -->
+        <select id="Genetic Risk" name="Genetic Risk" style=" left:80px;
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Genetic Risk</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            
+        </select>
+        <!-- A8 -->
+        <select id="chronic Lung Disease" name="chronic Lung Disease" style="
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>chronic Lung Disease</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+        </select><br>
+        <!-- A9 -->
+        <select id="Balanced Diet" name="Balanced Diet" style=" left:80px;
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        ">
+            <option value=0>Balanced Diet</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+        </select>
+        <!-- A10 -->
+        <select id="Obesity" name="Obesity" style="
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Obesity</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+        </select><br>
+        
+        <!-- A11 -->
+        <select id="Smoking" name="Smoking" style=" left:80px;
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Smoking</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+        </select>
+        <!-- A12 -->
+        <select id="Passive Smoker" name="Passive Smoker" style="
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Passive Smoker</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+        </select><br>
+        <!-- A13 -->
+        <select id="Chest Pain" name="Chest Pain" style=" left:80px; 
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Chest Pain</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+            <option value=9>9</option>
+        </select>
+        <!-- A14 -->
+        <select id="Coughing of Blood" name="Coughing of Blood" style="
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Coughing of Blood</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+            <option value=9>9</option>
+        </select><br>
+        <!-- A15 -->
+        <select id="Fatigue" name="Fatigue" style="left:80px;
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Fatigue</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+            <option value=9>9</option>
+        </select>
+        <!-- A16 -->
+        <select id="Weight Loss" name="Weight Loss" style="
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Weight Loss</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+            
+        </select><br>
+        <!-- A17 -->
+        <select id="Shortness of Breath" name="Shortness of Breath" style="left:80px;
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Shortness of Breath</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+            <option value=9>9</option>
+        </select>
+        <!-- A18 -->
+        <select id="Wheezing" name="Wheezing" style=" 
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Wheezing</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+            
+        </select><br>
+        <!-- A19 -->
+        <select id="Swallowing Difficulty" name="Swallowing Difficulty" style="left:80px;
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Swallowing Difficulty</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+            
+        </select>
+        <!-- A20 -->
+        <select id="Clubbing of Finger Nails" name="Clubbing of Finger Nails" style="
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Clubbing of Finger Nails</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+            <option value=8>8</option>
+            <option value=9>9</option>
+        </select><br>
+        
+        <!-- A21 -->
+        <select id="Frequent Cold" name="Frequent Cold" style="left:80px; 
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Frequent Cold</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+        </select>
+        <!-- A22 -->
+        <select id="Dry Cough" name="Dry Cough" style="
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Dry Cough</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+        </select><br>
+        <!-- A23 -->
+        <select id="Snoring" name="Snoring" style="left:80px; 
+	                                        width: 400px;
+	                                        height: 40px;
+	                                        margin-bottom: 5px;">
+            <option value=0>Snoring</option>
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+        </select><br>
+        <input type="submit" class="my-cta-button" value="Predict"><br></br>
+            <p class =dataset style="color:Black; margin-right:1000px;font-family:courier,arial,helvetica;">
+            
+        </form>
+    	</div>
+</body>
+</html>
+<style>
+    html{
+	height: 100%;
+	margin: 0;
+
+}
+
+body{
+	font-family: sans-serif;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+	height:auto;
+	color: #fff;
+	font-size: 25px;
+}
+
+/* Website Title */
+.container{
+    padding: 25px;
+	position: relative;
+}
+
+.description p{
+	color: #ffffff;
+    font-style: italic;
+    font-size: 14px;
+    margin: -5px 0 0;
+}
+
+/* Text Area */
+.ml-container{
+    margin: 30px 0;
+	flex: 1 0 auto;
+}
+
+.form-input {
+	text-align: center;
+	width: 350px;
+	height: 25px;
+	margin-bottom: 5px;
+}
+
+/* Predict Button */
+.my-cta-button{
+	background: #f9f9f9;
+   	border: 3px solid #000000;
+    border-radius: 1000px;
+    box-shadow: 3px 3px #8c8c8c;
+	margin-top: 10px;
+    padding: 10px 36px;
+    color: green;
+    display: inline-block;
+   	font:  sans-serif;
+   float:center
+    text-align: center;
+}
+
+.my-cta-button:hover{
+    color: red;
+    border: 4px solid #4d089a;
+}
+
+.my-cta-button:active{
+    box-shadow: 0 0;
+
+}
+.dataset{
+  float:left
+}
+.website{
+  float:left
+}
+
+/* Contact */
+.contact-icon{
+	color: #3385ff;
+	padding: 7px;
+}
+
+.contact-icon:hover{
+	color: blue;
+}
+
+/* Footer */
+.footer{
+	flex-shrink: 0;
+	position: relative;
+	padding: 21px;
+
+}
+
+.footer-description{
+	color: #3385ff;
+	margin: 0;
+	font-size: 12px;
+}
+
+/* Result */
+.results{
+    padding: 25px 0 0;
+	flex: 1 0 auto;
+}
+
+.danger{
+    color: #ff0000;
+}
+
+.safe{
+    color: green;
+}
+.happy{
+  color:#6600cc
+}
+.sad{
+  color:#669900
+
+}
+
+h2 {
+      text-align: center;
+      color: white;
+      text-transform: uppercase;
+      font-size: 30px;
+      text-shadow: 2px 2px 4px black;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+</style>
+{% endblock %}
