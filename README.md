@@ -67,7 +67,7 @@ https://user-images.githubusercontent.com/48377494/205434172-9b78d19a-a0ed-48e0-
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2KQk5adNY0k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-https://youtu.be/2KQk5adNY0k
+(https://www.youtube.com/watch?v=2KQk5adNY0k "Now in Android: 55")
 
 ## developed by @kandepallysatish
 ## To Contact 
