@@ -64,7 +64,7 @@ matplotlib
 ## WORKING VIDEO
 
 Watch Now
-<a href="https://www.youtube.com/watch?v=2KQk5adNY0k" target="_blank">
+<a href="https://www.youtube.com/watch?v=2KQk5adNY0k?sub_confirmation=1" target="_blank">
  <img src="https://user-images.githubusercontent.com/48377494/231854356-c94e1d9c-177b-4d60-9c26-f9dbba61726d.jpg" alt="Watch the video" width="240" height="180" border="10" />
 </a>
 
