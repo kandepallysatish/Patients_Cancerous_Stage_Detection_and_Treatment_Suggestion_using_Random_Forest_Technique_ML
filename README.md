@@ -63,15 +63,9 @@ matplotlib
 
 ## WORKING VIDEO
 
-https://www.youtube.com/watch?v=2KQk5adNY0k
-
-
-Markdown style
-[![Watch the video](https://img.youtube.com/vi/nTQUwghvy5Q/default.jpg)](https://youtu.be/nTQUwghvy5Q)
-
-HTML style
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=nTQUwghvy5Q" target="_blank">
- <img src="http://img.youtube.com/vi/nTQUwghvy5Q/mqdefault.jpg" alt="Watch the video" width="240" height="180" border="10" />
+Watch Now
+<a href="https://www.youtube.com/watch?v=2KQk5adNY0k" target="_blank">
+ <img src="https://user-images.githubusercontent.com/48377494/231854356-c94e1d9c-177b-4d60-9c26-f9dbba61726d.jpg" alt="Watch the video" width="240" height="180" border="10" />
 </a>
 
 ## developed by @kandepallysatish
